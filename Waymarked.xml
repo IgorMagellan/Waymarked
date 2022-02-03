@@ -6,7 +6,7 @@ Waymarked Overlay
 -->
 <rendertheme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" map-background="#F8F8F8" map-background-outside="#EEEEEE" version="5" xmlns="http://mapsforge.org/renderTheme" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd">
 
-<stylemenu id="wm-menu" defaultvalue="wm_style1" defaultlang="en">
+<stylemenu id="wm-menu" defaultvalue="wm_style_p" defaultlang="en">
 
 	<!-- point of menu overlays -->
 	<layer id="pointmenu_lines" enabled="true">
@@ -19,765 +19,772 @@ Waymarked Overlay
 		<name lang="ru" value="Метки маршрутов, c z15" />			
 		<cat id="waymarks" />
 	</layer>
+	<layer id="pointmenu_waymtext" enabled="true">
+		<name lang="en" value="Route names" />
+		<name lang="ru" value="Названия" />			
+		<cat id="waymtext" />
+	</layer>	
 
 	<!--  styles -->
-	<layer id="wm_style1" visible="true">
+	<layer id="wm_style_p" visible="true">
 		<name lang="en" value="Dotted lines" />
 		<name lang="ru" value="Пунктирные линии" />
 		<overlay id="pointmenu_lines" />
 		<overlay id="pointmenu_waymarks" />
+		<overlay id="pointmenu_waymtext" />		
 	</layer>
 	
-	<layer id="wm_style2" visible="true">
+	<layer id="wm_style_s" visible="true">
 		<name lang="en" value="Solid lines" />
 		<name lang="ru" value="Сплошные линии" />
 		<overlay id="pointmenu_lines" />
 		<overlay id="pointmenu_waymarks" />
+		<overlay id="pointmenu_waymtext" />			
 	</layer>	
 </stylemenu>
 
 
 <!-- Hiking waymarks -->
 	<rule cat="waymarks" e="any" k="information" v="guidepost">
-		<symbol id="s_guidepost" src="file:/ele/s_guidepost.svg" symbol-height="18" />
+		<symbol id="s_guidepost" src="file:/osmc/s_guidepost.svg" symbol-height="18" />
 		<rule e="any" k="*" v="*">
 			<caption k="addr:housenumber" priority="15" symbol-id="s_guidepost" display="always" position="right" font-size="10" font-style="bold" fill="#FFFFFF" stroke="#333333" stroke-width="2" />
 		</rule>
 	</rule>
-	<rule cat="waymarks" e="node" k="osmc" v="osmc_yes"><!--zm-->
+	<rule cat="waymarks" e="node" k="osmc" v="osmc_yes">
 		<rule e="node" k="*" v="*" zoom-max="14" zoom-min="12">
 			<rule e="node" k="osmc_background" v="wmbg_black|wmbg_black_circle|wmbg_black_frame|wmbg_black_round">
-				<symbol src="file:/ele/wmbg_black.svg" symbol-height="6" />
+				<symbol src="file:/osmc/wmbg_black.svg" symbol-height="6" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_blue|wmbg_blue_circle|wmbg_blue_frame|wmbg_blue_round">
-				<symbol src="file:/ele/wmbg_blue.svg" symbol-height="6" />
+				<symbol src="file:/osmc/wmbg_blue.svg" symbol-height="6" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_brown|wmbg_brown_circle|wmbg_brown_frame|wmbg_brown_round">
-				<symbol src="file:/ele/wmbg_brown.svg" symbol-height="6" />
+				<symbol src="file:/osmc/wmbg_brown.svg" symbol-height="6" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_green|wmbg_green_circle|wmbg_green_frame|wmbg_green_round">
-				<symbol src="file:/ele/wmbg_green.svg" symbol-height="6" />
+				<symbol src="file:/osmc/wmbg_green.svg" symbol-height="6" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_orange|wmbg_orange_circle|wmbg_orange_frame|wmbg_orange_round">
-				<symbol src="file:/ele/wmbg_orange.svg" symbol-height="6" />
+				<symbol src="file:/osmc/wmbg_orange.svg" symbol-height="6" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_purple|wmbg_purple_circle|wmbg_purple_frame|wmbg_purple_round">
-				<symbol src="file:/ele/wmbg_purple.svg" symbol-height="6" />
+				<symbol src="file:/osmc/wmbg_purple.svg" symbol-height="6" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_red|wmbg_red_circle|wmbg_red_frame|wmbg_red_round">
-				<symbol src="file:/ele/wmbg_red.svg" symbol-height="6" />
+				<symbol src="file:/osmc/wmbg_red.svg" symbol-height="6" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_white|wmbg_white_circle|wmbg_white_frame|wmbg_white_round|~">
-				<symbol src="file:/ele/wmbg_white.svg" symbol-height="6" />
+				<symbol src="file:/osmc/wmbg_white.svg" symbol-height="6" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_yellow|wmbg_yellow_circle|wmbg_yellow_frame|wmbg_yellow_round">
-				<symbol src="file:/ele/wmbg_yellow.svg" symbol-height="6" />
+				<symbol src="file:/osmc/wmbg_yellow.svg" symbol-height="6" />
 			</rule>
 		</rule>
 		<rule e="node" k="osmc_foreground" v="*" zoom-min="15">
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_l">
-				<symbol src="file:/ele/wmfg_blue_L.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_L.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_arch">
-				<symbol src="file:/ele/wmfg_blue_arch.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_arch.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_bar">
-				<symbol src="file:/ele/wmfg_blue_bar.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_bar.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_bowl">
-				<symbol src="file:/ele/wmfg_blue_bowl.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_bowl.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_circle">
-				<symbol src="file:/ele/wmfg_blue_circle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_circle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_corner">
-				<symbol src="file:/ele/wmfg_blue_corner.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_corner.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_cross">
-				<symbol src="file:/ele/wmfg_blue_cross.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_cross.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_diamond">
-				<symbol src="file:/ele/wmfg_blue_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_dot">
-				<symbol src="file:/ele/wmfg_blue_dot.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_dot.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_fork">
-				<symbol src="file:/ele/wmfg_blue_fork.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_fork.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_lower">
-				<symbol src="file:/ele/wmfg_blue_lower.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_lower.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_pointer">
-				<symbol src="file:/ele/wmfg_blue_pointer.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_pointer.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_rectangle">
-				<symbol src="file:/ele/wmfg_blue_rectangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_rectangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_right">
-				<symbol src="file:/ele/wmfg_blue_right.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_right.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_slash">
-				<symbol src="file:/ele/wmfg_blue_slash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_slash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_stripe">
-				<symbol src="file:/ele/wmfg_blue_stripe.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_stripe.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_triangle">
-				<symbol src="file:/ele/wmfg_blue_triangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_triangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_triangle_turned">
-				<symbol src="file:/ele/wmfg_blue_triangle_turned.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_triangle_turned.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_turned_t">
-				<symbol src="file:/ele/wmfg_blue_turned_T.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_turned_T.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_x">
-				<symbol src="file:/ele/wmfg_blue_x.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_x.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_l">
-				<symbol src="file:/ele/wmfg_red_L.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_L.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_arch">
-				<symbol src="file:/ele/wmfg_red_arch.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_arch.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_backslash">
-				<symbol src="file:/ele/wmfg_red_backslash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_backslash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_bar">
-				<symbol src="file:/ele/wmfg_red_bar.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_bar.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_circle">
-				<symbol src="file:/ele/wmfg_red_circle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_circle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_corner">
-				<symbol src="file:/ele/wmfg_red_corner.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_corner.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_crest">
-				<symbol src="file:/ele/wmfg_red_crest.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_crest.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_cross">
-				<symbol src="file:/ele/wmfg_red_cross.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_cross.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_diamond">
-				<symbol src="file:/ele/wmfg_red_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_dot">
-				<symbol src="file:/ele/wmfg_red_dot.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_dot.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_drop">
-				<symbol src="file:/ele/wmfg_red_drop.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_drop.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_drop_line">
-				<symbol src="file:/ele/wmfg_red_drop_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_drop_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_fork">
-				<symbol src="file:/ele/wmfg_red_fork.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_fork.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_hiker">
-				<symbol src="file:/ele/wmfg_red_hiker.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_hiker.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_lower">
-				<symbol src="file:/ele/wmfg_red_lower.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_lower.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_pointer">
-				<symbol src="file:/ele/wmfg_red_pointer.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_pointer.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_rectangle">
-				<symbol src="file:/ele/wmfg_red_rectangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_rectangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_right">
-				<symbol src="file:/ele/wmfg_red_right.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_right.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_slash">
-				<symbol src="file:/ele/wmfg_red_slash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_slash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_stripe">
-				<symbol src="file:/ele/wmfg_red_stripe.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_stripe.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_triangle">
-				<symbol src="file:/ele/wmfg_red_triangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_triangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_triangle_turned">
-				<symbol src="file:/ele/wmfg_red_triangle_turned.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_triangle_turned.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_turned_t">
-				<symbol src="file:/ele/wmfg_red_turned_T.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_turned_T.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_x">
-				<symbol src="file:/ele/wmfg_red_x.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_x.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_l">
-				<symbol src="file:/ele/wmfg_yellow_L.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_L.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_arch">
-				<symbol src="file:/ele/wmfg_yellow_arch.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_arch.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_backslash">
-				<symbol src="file:/ele/wmfg_yellow_backslash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_backslash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_bar">
-				<symbol src="file:/ele/wmfg_yellow_bar.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_bar.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_bowl">
-				<symbol src="file:/ele/wmfg_yellow_bowl.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_bowl.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_circle">
-				<symbol src="file:/ele/wmfg_yellow_circle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_circle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_corner">
-				<symbol src="file:/ele/wmfg_yellow_corner.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_corner.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_cross">
-				<symbol src="file:/ele/wmfg_yellow_cross.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_cross.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_diamond">
-				<symbol src="file:/ele/wmfg_yellow_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_dot">
-				<symbol src="file:/ele/wmfg_yellow_dot.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_dot.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_fork">
-				<symbol src="file:/ele/wmfg_yellow_fork.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_fork.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_hiker">
-				<symbol src="file:/ele/wmfg_yellow_hiker.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_hiker.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_lower">
-				<symbol src="file:/ele/wmfg_yellow_lower.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_lower.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_pointer">
-				<symbol src="file:/ele/wmfg_yellow_pointer.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_pointer.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_rectangle">
-				<symbol src="file:/ele/wmfg_yellow_rectangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_rectangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_rectangle_line">
-				<symbol src="file:/ele/wmfg_yellow_rectangle_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_rectangle_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_slash">
-				<symbol src="file:/ele/wmfg_yellow_slash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_slash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_stripe">
-				<symbol src="file:/ele/wmfg_yellow_stripe.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_stripe.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_triangle">
-				<symbol src="file:/ele/wmfg_yellow_triangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_triangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_turned_t">
-				<symbol src="file:/ele/wmfg_yellow_turned_T.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_turned_T.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_x">
-				<symbol src="file:/ele/wmfg_yellow_x.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_x.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_arch">
-				<symbol src="file:/ele/wmfg_black_arch.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_arch.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_bar">
-				<symbol src="file:/ele/wmfg_black_bar.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_bar.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_circle">
-				<symbol src="file:/ele/wmfg_black_circle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_circle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_crest">
-				<symbol src="file:/ele/wmfg_black_crest.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_crest.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_cross">
-				<symbol src="file:/ele/wmfg_black_cross.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_cross.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_diamond">
-				<symbol src="file:/ele/wmfg_black_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_dot">
-				<symbol src="file:/ele/wmfg_black_dot.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_dot.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_fork">
-				<symbol src="file:/ele/wmfg_black_fork.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_fork.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_horse">
-				<symbol src="file:/ele/wmfg_black_horse.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_horse.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_pointer">
-				<symbol src="file:/ele/wmfg_black_pointer.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_pointer.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_rectangle">
-				<symbol src="file:/ele/wmfg_black_rectangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_rectangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_rectangle_line">
-				<symbol src="file:/ele/wmfg_black_rectangle_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_rectangle_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_red_diamond">
-				<symbol src="file:/ele/wmfg_black_red_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_red_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_triangle">
-				<symbol src="file:/ele/wmfg_black_triangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_triangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_triangle_line">
-				<symbol src="file:/ele/wmfg_black_triangle_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_triangle_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_x">
-				<symbol src="file:/ele/wmfg_black_x.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_x.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_l">
-				<symbol src="file:/ele/wmfg_green_L.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_L.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_arch">
-				<symbol src="file:/ele/wmfg_green_arch.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_arch.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_backslash">
-				<symbol src="file:/ele/wmfg_green_backslash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_backslash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_bar">
-				<symbol src="file:/ele/wmfg_green_bar.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_bar.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_bowl">
-				<symbol src="file:/ele/wmfg_green_bowl.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_bowl.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_circle">
-				<symbol src="file:/ele/wmfg_green_circle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_circle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_corner">
-				<symbol src="file:/ele/wmfg_green_corner.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_corner.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_cross">
-				<symbol src="file:/ele/wmfg_green_cross.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_cross.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_diamond">
-				<symbol src="file:/ele/wmfg_green_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_dot">
-				<symbol src="file:/ele/wmfg_green_dot.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_dot.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_drop_line">
-				<symbol src="file:/ele/wmfg_green_drop_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_drop_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_fork">
-				<symbol src="file:/ele/wmfg_green_fork.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_fork.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_hiker">
-				<symbol src="file:/ele/wmfg_green_hiker.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_hiker.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_horse">
-				<symbol src="file:/ele/wmfg_green_horse.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_horse.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_lower">
-				<symbol src="file:/ele/wmfg_green_lower.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_lower.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_pointer">
-				<symbol src="file:/ele/wmfg_green_pointer.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_pointer.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_rectangle">
-				<symbol src="file:/ele/wmfg_green_rectangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_rectangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_right">
-				<symbol src="file:/ele/wmfg_green_right.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_right.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_slash">
-				<symbol src="file:/ele/wmfg_green_slash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_slash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_stripe">
-				<symbol src="file:/ele/wmfg_green_stripe.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_stripe.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_triangle">
-				<symbol src="file:/ele/wmfg_green_triangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_triangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_triangle_line">
-				<symbol src="file:/ele/wmfg_green_triangle_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_triangle_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_triangle_turned">
-				<symbol src="file:/ele/wmfg_green_triangle_turned.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_triangle_turned.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_turned_t">
-				<symbol src="file:/ele/wmfg_green_turned_T.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_turned_T.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_x">
-				<symbol src="file:/ele/wmfg_green_x.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_x.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_arch">
-				<symbol src="file:/ele/wmfg_white_arch.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_arch.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_bar">
-				<symbol src="file:/ele/wmfg_white_bar.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_bar.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_circle">
-				<symbol src="file:/ele/wmfg_white_circle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_circle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_cross">
-				<symbol src="file:/ele/wmfg_white_cross.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_cross.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_diamond">
-				<symbol src="file:/ele/wmfg_white_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_diamond_line">
-				<symbol src="file:/ele/wmfg_white_diamond_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_diamond_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_dot">
-				<symbol src="file:/ele/wmfg_white_dot.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_dot.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_hiker">
-				<symbol src="file:/ele/wmfg_white_hiker.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_hiker.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_lower">
-				<symbol src="file:/ele/wmfg_white_lower.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_lower.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_pointer">
-				<symbol src="file:/ele/wmfg_white_pointer.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_pointer.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_rectangle">
-				<symbol src="file:/ele/wmfg_white_rectangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_rectangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_rectangle_line">
-				<symbol src="file:/ele/wmfg_white_rectangle_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_rectangle_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_red_diamond">
-				<symbol src="file:/ele/wmfg_white_red_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_red_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_right">
-				<symbol src="file:/ele/wmfg_white_right.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_right.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_slash">
-				<symbol src="file:/ele/wmfg_white_slash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_slash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_stripe">
-				<symbol src="file:/ele/wmfg_white_stripe.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_stripe.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_triangle">
-				<symbol src="file:/ele/wmfg_white_triangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_triangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_triangle_line">
-				<symbol src="file:/ele/wmfg_white_triangle_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_triangle_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_turned_t">
-				<symbol src="file:/ele/wmfg_white_turned_T.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_turned_T.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_x">
-				<symbol src="file:/ele/wmfg_white_x.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_x.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_ammonit">
-				<symbol src="file:/ele/wmfg_ammonit.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_ammonit.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_bridleway">
-				<symbol src="file:/ele/wmfg_bridleway.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_bridleway.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_heart">
-				<symbol src="file:/ele/wmfg_heart.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_heart.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_hiker">
-				<symbol src="file:/ele/wmfg_hiker.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_hiker.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_mine">
-				<symbol src="file:/ele/wmfg_mine.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_mine.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_bar">
-				<symbol src="file:/ele/wmfg_orange_bar.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_bar.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_diamond_line">
-				<symbol src="file:/ele/wmfg_orange_diamond_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_diamond_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_dot">
-				<symbol src="file:/ele/wmfg_orange_dot.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_dot.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_right">
-				<symbol src="file:/ele/wmfg_orange_right.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_right.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_shell">
-				<symbol src="file:/ele/wmfg_shell.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_shell.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_shell_modern">
-				<symbol src="file:/ele/wmfg_shell_modern.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_shell_modern.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_tower">
-				<symbol src="file:/ele/wmfg_tower.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_tower.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_wolfshook">
-				<symbol src="file:/ele/wmfg_wolfshook.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_wolfshook.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_backslash">
-				<symbol src="file:/ele/wmfg_black_backslash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_backslash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_corner">
-				<symbol src="file:/ele/wmfg_black_corner.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_corner.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_diamond_line">
-				<symbol src="file:/ele/wmfg_black_diamond_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_diamond_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_hiker">
-				<symbol src="file:/ele/wmfg_black_hiker.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_hiker.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_lower">
-				<symbol src="file:/ele/wmfg_black_lower.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_lower.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_stripe">
-				<symbol src="file:/ele/wmfg_black_stripe.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_stripe.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_black_turned_T">
-				<symbol src="file:/ele/wmfg_black_turned_T.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_black_turned_T.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_backslash">
-				<symbol src="file:/ele/wmfg_blue_backslash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_backslash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_hiker">
-				<symbol src="file:/ele/wmfg_blue_hiker.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_hiker.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_blue_triangle_line">
-				<symbol src="file:/ele/wmfg_blue_triangle_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_blue_triangle_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_brown_bar">
-				<symbol src="file:/ele/wmfg_brown_bar.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_brown_bar.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_brown_diamond">
-				<symbol src="file:/ele/wmfg_brown_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_brown_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_brown_dot">
-				<symbol src="file:/ele/wmfg_brown_dot.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_brown_dot.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_brown_hiker">
-				<symbol src="file:/ele/wmfg_brown_hiker.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_brown_hiker.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_brown_lower">
-				<symbol src="file:/ele/wmfg_brown_lower.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_brown_lower.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_brown_pointer">
-				<symbol src="file:/ele/wmfg_brown_pointer.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_brown_pointer.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_brown_rectangle">
-				<symbol src="file:/ele/wmfg_brown_rectangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_brown_rectangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_brown_stripe">
-				<symbol src="file:/ele/wmfg_brown_stripe.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_brown_stripe.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_brown_x">
-				<symbol src="file:/ele/wmfg_brown_x.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_brown_x.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_gray_bar">
-				<symbol src="file:/ele/wmfg_gray_bar.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_gray_bar.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_gray_pointer">
-				<symbol src="file:/ele/wmfg_gray_pointer.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_gray_pointer.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_gray_triangle">
-				<symbol src="file:/ele/wmfg_gray_triangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_gray_triangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_diamond_line">
-				<symbol src="file:/ele/wmfg_green_diamond_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_diamond_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_green_wheel">
-				<symbol src="file:/ele/wmfg_green_wheel.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_green_wheel.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_circle">
-				<symbol src="file:/ele/wmfg_orange_circle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_circle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_cross">
-				<symbol src="file:/ele/wmfg_orange_cross.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_cross.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_diamond">
-				<symbol src="file:/ele/wmfg_orange_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_hexagon">
-				<symbol src="file:/ele/wmfg_orange_hexagon.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_hexagon.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_hiker">
-				<symbol src="file:/ele/wmfg_orange_hiker.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_hiker.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_lower">
-				<symbol src="file:/ele/wmfg_orange_lower.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_lower.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_pointer">
-				<symbol src="file:/ele/wmfg_orange_pointer.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_pointer.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_rectangle">
-				<symbol src="file:/ele/wmfg_orange_rectangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_rectangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_stripe">
-				<symbol src="file:/ele/wmfg_orange_stripe.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_stripe.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_orange_triangle">
-				<symbol src="file:/ele/wmfg_orange_triangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_orange_triangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_purple_bar">
-				<symbol src="file:/ele/wmfg_purple_bar.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_purple_bar.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_purple_circle">
-				<symbol src="file:/ele/wmfg_purple_circle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_purple_circle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_purple_diamond">
-				<symbol src="file:/ele/wmfg_purple_diamond.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_purple_diamond.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_purple_dot">
-				<symbol src="file:/ele/wmfg_purple_dot.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_purple_dot.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_purple_lower">
-				<symbol src="file:/ele/wmfg_purple_lower.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_purple_lower.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_purple_pointer">
-				<symbol src="file:/ele/wmfg_purple_pointer.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_purple_pointer.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_purple_rectangle">
-				<symbol src="file:/ele/wmfg_purple_rectangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_purple_rectangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_purple_stripe">
-				<symbol src="file:/ele/wmfg_purple_stripe.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_purple_stripe.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_purple_triangle">
-				<symbol src="file:/ele/wmfg_purple_triangle.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_purple_triangle.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_diamond_line">
-				<symbol src="file:/ele/wmfg_red_diamond_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_diamond_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_shell">
-				<symbol src="file:/ele/wmfg_red_shell.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_shell.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_triangle_line">
-				<symbol src="file:/ele/wmfg_red_triangle_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_triangle_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_red_wheel">
-				<symbol src="file:/ele/wmfg_red_wheel.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_red_wheel.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_backslash">
-				<symbol src="file:/ele/wmfg_white_backslash.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_backslash.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_corner">
-				<symbol src="file:/ele/wmfg_white_corner.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_corner.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_white_triangle_turned">
-				<symbol src="file:/ele/wmfg_white_triangle_turned.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_white_triangle_turned.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_diamond_line">
-				<symbol src="file:/ele/wmfg_yellow_diamond_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_diamond_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_hexagon">
-				<symbol src="file:/ele/wmfg_yellow_hexagon.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_hexagon.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_shell">
-				<symbol src="file:/ele/wmfg_yellow_shell.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_shell.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_triangle_line">
-				<symbol src="file:/ele/wmfg_yellow_triangle_line.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_triangle_line.svg" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_foreground" v="wmfg_yellow_triangle_turned">
-				<symbol src="file:/ele/wmfg_yellow_triangle_turned.svg" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmfg_yellow_triangle_turned.svg" display="always" symbol-height="12" />
 			</rule>
 		</rule>
 		<rule e="node" k="*" v="*" zoom-min="15">
 			<rule e="node" k="osmc_background" v="wmbg_black">
-				<symbol src="file:/ele/wmbg_black.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_black.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_black_circle">
-				<symbol src="file:/ele/wmbg_black_circle.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_black_circle.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_black_frame">
-				<symbol src="file:/ele/wmbg_black_frame.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_black_frame.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_black_round">
-				<symbol src="file:/ele/wmbg_black_round.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_black_round.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_blue">
-				<symbol src="file:/ele/wmbg_blue.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_blue.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_blue_circle">
-				<symbol src="file:/ele/wmbg_blue_circle.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_blue_circle.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_blue_frame">
-				<symbol src="file:/ele/wmbg_blue_frame.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_blue_frame.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_blue_round">
-				<symbol src="file:/ele/wmbg_blue_round.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_blue_round.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_brown">
-				<symbol src="file:/ele/wmbg_brown.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_brown.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_brown_circle">
-				<symbol src="file:/ele/wmbg_brown_circle.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_brown_circle.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_brown_frame">
-				<symbol src="file:/ele/wmbg_brown_frame.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_brown_frame.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_brown_round">
-				<symbol src="file:/ele/wmbg_brown_round.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_brown_round.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_gray">
-				<symbol src="file:/ele/wmbg_gray.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_gray.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_gray_circle">
-				<symbol src="file:/ele/wmbg_gray_circle.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_gray_circle.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_gray_frame">
-				<symbol src="file:/ele/wmbg_gray_frame.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_gray_frame.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_gray_round">
-				<symbol src="file:/ele/wmbg_gray_round.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_gray_round.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_green">
-				<symbol src="file:/ele/wmbg_green.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_green.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_green_circle">
-				<symbol src="file:/ele/wmbg_green_circle.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_green_circle.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_green_frame">
-				<symbol src="file:/ele/wmbg_green_frame.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_green_frame.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_green_round">
-				<symbol src="file:/ele/wmbg_green_round.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_green_round.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_orange">
-				<symbol src="file:/ele/wmbg_orange.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_orange.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_orange_circle">
-				<symbol src="file:/ele/wmbg_orange_circle.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_orange_circle.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_orange_frame">
-				<symbol src="file:/ele/wmbg_orange_frame.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_orange_frame.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_orange_round">
-				<symbol src="file:/ele/wmbg_orange_round.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_orange_round.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_purple">
-				<symbol src="file:/ele/wmbg_purple.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_purple.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_purple_circle">
-				<symbol src="file:/ele/wmbg_purple_circle.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_purple_circle.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_purple_frame">
-				<symbol src="file:/ele/wmbg_purple_frame.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_purple_frame.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_purple_round">
-				<symbol src="file:/ele/wmbg_purple_round.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_purple_round.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_red">
-				<symbol src="file:/ele/wmbg_red.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_red.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_red_circle">
-				<symbol src="file:/ele/wmbg_red_circle.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_red_circle.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_red_frame">
-				<symbol src="file:/ele/wmbg_red_frame.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_red_frame.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_red_round">
-				<symbol src="file:/ele/wmbg_red_round.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_red_round.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_white|~">
-				<symbol src="file:/ele/wmbg_white.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_white.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_white_circle">
-				<symbol src="file:/ele/wmbg_white_circle.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_white_circle.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_white_frame">
-				<symbol src="file:/ele/wmbg_white_frame.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_white_frame.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_white_round">
-				<symbol src="file:/ele/wmbg_white_round.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_white_round.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_yellow">
-				<symbol src="file:/ele/wmbg_yellow.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_yellow.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_yellow_circle">
-				<symbol src="file:/ele/wmbg_yellow_circle.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_yellow_circle.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_yellow_frame">
-				<symbol src="file:/ele/wmbg_yellow_frame.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_yellow_frame.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 			<rule e="node" k="osmc_background" v="wmbg_yellow_round">
-				<symbol src="file:/ele/wmbg_yellow_round.svg" priority="-1" display="always" symbol-height="12" />
+				<symbol src="file:/osmc/wmbg_yellow_round.svg" priority="-1" display="always" symbol-height="12" />
 			</rule>
 		</rule>
 
@@ -995,29 +1002,29 @@ Waymarked Overlay
 					<line stroke="#AAAAAA" stroke-width="0.6" dy="0.8" stroke-linecap="round" stroke-dasharray="1,8" />
 				</rule>
 			</rule>
-			<rule e="way" k="osmc_color" v="*">
-				<rule e="any" k="hknetwork" v="iwn|nwn">
-					<rule e="any" k="*" v="*" zoom-max="9">
-						<pathText priority="-1" k="ref_hike" font-style="bold" font-size="9" fill="#FFFFFF" stroke="#555555" stroke-width="4" repeat-start="0" />
-					</rule>
-					<rule e="any" k="*" v="*" zoom-max="11" zoom-min="10">
-						<pathText priority="-1" k="ref_hike" font-style="bold" font-size="9" fill="#FFFFFF" stroke="#555555" stroke-width="3.5" repeat-start="15" repeat-gap="80" />
-					</rule>
-					<rule e="any" k="*" v="*" zoom-max="12" zoom-min="12">
-						<pathText priority="-1" k="ref_hike" font-style="bold" font-size="9" fill="#FFFFFF" stroke="#555555" stroke-width="2.5" repeat-start="30" repeat-gap="100" />
-					</rule>
-				</rule>
-				<rule e="way" k="hknetwork" v="*">
-					<rule e="any" k="*" v="*" zoom-max="13" zoom-min="13">
-						<pathText priority="-1" k="ref_hike" font-style="bold" font-size="9" fill="#FFFFFF" stroke="#555555" stroke-width="2.5" repeat-start="30" repeat-gap="100" />
-					</rule>
-					<rule e="any" k="*" v="*" zoom-min="14">
-						<pathText priority="-1" k="ref_hike" font-style="bold" font-size="10" fill="#FFFFFF" stroke="#555555" stroke-width="2.5" dy="-2" repeat-start="50" repeat-gap="300" />
-					</rule>
-				</rule>
-			</rule>
 
 		</rule>
 	</rule>
+	<rule cat="waymtext" e="way" k="osmc_color" v="*">
+		<rule e="any" k="hknetwork" v="iwn|nwn">
+			<rule e="any" k="*" v="*" zoom-max="9">
+				<pathText priority="-1" k="ref_hike" font-style="bold" font-size="9" fill="#FFFFFF" stroke="#555555" stroke-width="4" repeat-start="0" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-max="11" zoom-min="10">
+				<pathText priority="-1" k="ref_hike" font-style="bold" font-size="9" fill="#FFFFFF" stroke="#555555" stroke-width="3.5" repeat-start="15" repeat-gap="80" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-max="12" zoom-min="12">
+				<pathText priority="-1" k="ref_hike" font-style="bold" font-size="9" fill="#FFFFFF" stroke="#555555" stroke-width="2.5" repeat-start="30" repeat-gap="100" />
+			</rule>
+		</rule>
+		<rule e="way" k="hknetwork" v="*">
+			<rule e="any" k="*" v="*" zoom-max="13" zoom-min="13">
+				<pathText priority="-1" k="ref_hike" font-style="bold" font-size="9" fill="#FFFFFF" stroke="#555555" stroke-width="2.5" repeat-start="30" repeat-gap="100" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="14">
+				<pathText priority="-1" k="ref_hike" font-style="bold" font-size="9" fill="#FFFFFF" stroke="#555555" stroke-width="2.5" dy="-2" repeat-start="50" repeat-gap="300" />
+			</rule>
+		</rule>
+	</rule>	
 
 </rendertheme>

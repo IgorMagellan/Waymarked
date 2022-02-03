@@ -8,50 +8,33 @@ Waymarked Overlay
 
 <stylemenu id="wm-menu" defaultvalue="wm_style1" defaultlang="en">
 
-	<!-- overlays special -->
+	<!-- point of menu overlays -->
 	<layer id="pointmenu_lines" enabled="true">
-		<name lang="de" value="[R] Betonte Routen" />
-		<name lang="en" value="Waymarks routes" />
+		<name lang="en" value="Waymarked routes" />
 		<name lang="ru" value="Линии маршрутов" />		
-		<name lang="es" value="[R] Rutas resaltadas" />
-		<name lang="fr" value="[R] Itinéraires soulignés" />
-		<name lang="it" value="[R] Itinerari accentuati" />
 		<cat id="waylines" />
 	</layer>
 	<layer id="pointmenu_waymarks" enabled="true">
-		<name lang="de" value="[R] Wegzeichen" />
 		<name lang="en" value="Route labels, z15" />
 		<name lang="ru" value="Метки маршрутов, c z15" />			
-		<name lang="es" value="[R] Balizas" />
-		<name lang="fr" value="[R] Balisage" />
-		<name lang="it" value="[R] Segnavia" />
 		<cat id="waymarks" />
 	</layer>
 
-	<!-- mapstyles -->
+	<!--  styles -->
 	<layer id="wm_style1" visible="true">
-		<name lang="de" value="Wandern" />
-		<name lang="en" value="Пунктирные" />
-		<name lang="es" value="Excursionismo" />
-		<name lang="fr" value="Randonnées" />
-		<name lang="it" value="Escursionismo" />
+		<name lang="en" value="Dotted lines" />
+		<name lang="ru" value="Пунктирные линии" />
 		<overlay id="pointmenu_lines" />
 		<overlay id="pointmenu_waymarks" />
 	</layer>
 	
 	<layer id="wm_style2" visible="true">
-		<name lang="de" value="Wandern" />
-		<name lang="en" value="Сплошные линии" />
-		<name lang="es" value="Excursionismo" />
-		<name lang="fr" value="Randonnées" />
-		<name lang="it" value="Escursionismo" />
+		<name lang="en" value="Solid lines" />
+		<name lang="ru" value="Сплошные линии" />
 		<overlay id="pointmenu_lines" />
 		<overlay id="pointmenu_waymarks" />
 	</layer>	
 </stylemenu>
-
-
-
 
 
 <!-- Hiking waymarks -->

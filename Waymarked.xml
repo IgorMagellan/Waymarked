@@ -4,7 +4,7 @@
 Waymarked Overlay
 
 -->
-<rendertheme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" map-background="#79796a" map-background-outside="#EEEEEE" version="5" xmlns="http://mapsforge.org/renderTheme" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd">
+<rendertheme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" map-background="#ffffff" map-background-outside="#EEEEEE" version="5" xmlns="http://mapsforge.org/renderTheme" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd">
 
 <stylemenu id="wm-menu" defaultvalue="wm_style_p" defaultlang="en">
 

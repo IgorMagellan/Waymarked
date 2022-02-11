@@ -1,6 +1,12 @@
 # Waymarked Overlay
 
 Waymarked trails overlay
+
+<div align="center">
+
+![S&R_overlay.png](S&R_overlay.png)
+
+</div>
  
 It was planned as part of another theme - Tiramisu. It is an adapted single piece of code from the Elevate theme for marked routes as well as new **osmc:symbols** .
 

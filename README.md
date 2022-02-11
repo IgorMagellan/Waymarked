@@ -2,10 +2,11 @@
 
 Waymarked trails overlay
  
-This one was planned as part of another rendertheme - Tiramisu.
-It is an adapted single piece of code from the Elevate theme for marked routes as well as new osmc:symbols icons.
+It was planned as part of another theme - Tiramisu. It is an adapted single piece of code from the Elevate theme for marked routes as well as new osmc:symbols icons.
 
 The Tiramisu theme extension had to be temporarily abandoned due to a significant increase in the processing time of the theme when switching to it during the journey.
+
+Let it work as an overlay for now.
 
 Screenshots:
 

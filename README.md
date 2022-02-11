@@ -18,8 +18,8 @@ _Screenshots:_
 
 </div>
 
-Links:
+_Links_:
 
 - [OpenAndroMaps (OAM)](https://www.openandromaps.org/en/home_en)
 - [Elevate theme family by Tobias Kuehn](https://www.openandromaps.org/en/legend/elevate-mountain-hike-theme)
-- Tiramisu 4.*
+- [Tiramisu 4.*](https://github.com/IgorMagellan/Tiramisu)

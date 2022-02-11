@@ -1,10 +1,9 @@
 # Waymarked Overlay
 
 Waymarked trails overlay
-
 <div align="center">
 
-![S&R_overlay.png](S&R_overlay.png)
+![Waymarked.png](Waymarked.png)
 
 </div>
  

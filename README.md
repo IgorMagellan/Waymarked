@@ -1,8 +1,7 @@
 # Waymarked Overlay
+
  Waymarked trails overlay
 
-![http://images.vfl.ru/ii/1644590759/519df1d0/37989666.jpg](http://images.vfl.ru/ii/1644590759/519df1d0/37989666_s.jpg)
-http://images.vfl.ru/ii/1644590759/519df1d0/37989666_s.jpg
 Screenshots:
 
 <div align="center">

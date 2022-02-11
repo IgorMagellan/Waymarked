@@ -8,6 +8,8 @@ The Tiramisu theme extension had to be temporarily abandoned due to a significan
 
 Let it work as an overlay for now.
 
+This requires OAM V5 maps updated since January 2022
+
 _Screenshots:_
 
 <div align="center">

@@ -3,6 +3,13 @@
 
 Waymarked Overlay
 
+Version: 1.0
+
+Based on the Openandromaps Elevate Theme by Tobias Kuehn (https://www.openandromaps.org/en/legend/elevate-mountain-hike-theme)
+
+Adapted by Magellan
+igor.magellan@yandex.ru
+
 -->
 <rendertheme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" map-background="#ffffff" map-background-outside="#EEEEEE" version="5" xmlns="http://mapsforge.org/renderTheme" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd">
 
@@ -16,12 +23,12 @@ Waymarked Overlay
 	</layer>
 	<layer id="pointmenu_waymarks" enabled="true">
 		<name lang="en" value="Route labels, z15" />
-		<name lang="ru" value="Метки маршрутов, c z15" />			
+		<name lang="ru" value="Метки маршрутов, c z15" />
 		<cat id="waymarks" />
 	</layer>
 	<layer id="pointmenu_waymtext" enabled="true">
 		<name lang="en" value="Route names" />
-		<name lang="ru" value="Названия" />			
+		<name lang="ru" value="Названия" />
 		<cat id="waymtext" />
 	</layer>	
 
@@ -31,16 +38,19 @@ Waymarked Overlay
 		<name lang="ru" value="Пунктирные линии" />
 		<overlay id="pointmenu_lines" />
 		<overlay id="pointmenu_waymarks" />
-		<overlay id="pointmenu_waymtext" />		
+		<overlay id="pointmenu_waymtext" />
 	</layer>
 	
+<!-- 
 	<layer id="wm_style_s" visible="true">
 		<name lang="en" value="Solid lines" />
 		<name lang="ru" value="Сплошные линии" />
 		<overlay id="pointmenu_lines" />
 		<overlay id="pointmenu_waymarks" />
-		<overlay id="pointmenu_waymtext" />			
-	</layer>	
+		<overlay id="pointmenu_waymtext" />
+	</layer> 
+-->
+
 </stylemenu>
 
 
